@@ -7,7 +7,7 @@ During the first year of my PhD at the University of Oxford, I am taking the Adv
 
 ## Metropolis-Hasting
 
-Once you have memorised the course, follow this link to code the Metropolis-Hasting algorithm and see how it works : [Metropolis-Hasting ColabNotes](https://colab.research.google.com/github/ValentinKil/MCMC/blob/main/Metropolis-Hasting_MCMC.ipynb).  You can find a proposed solution here :  [Metropolis-Hasting with solution](https://nbviewer.org/github/ValentinKil/MCMC/blob/main/Metropolis-Hasting_MCMCwithSol.ipynb)
+Once you have memorised the course, follow this link to code the Metropolis-Hasting algorithm and see how it works : [Metropolis-Hasting ColabNotes](https://colab.research.google.com/github/ValentinKil/MCMC/blob/main/Metropolis-Hasting_MCMC.ipynb)(you will need a Google account).  You can find a proposed solution here :  [Metropolis-Hasting with solution](https://nbviewer.org/github/ValentinKil/MCMC/blob/main/Metropolis-Hasting_MCMCwithSol.ipynb)
 
 ## Coming soon 
 
