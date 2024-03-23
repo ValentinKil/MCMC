@@ -1,5 +1,6 @@
 import numpy as np
-import scipy.stats as stat 
+import scipy.stats as stats 
+from numba import jit 
 
 #%% Gaussian mixture 
 
@@ -17,7 +18,7 @@ def gausmix(x,moy=moy_list,cov=cov_list):
     nb_gaussian=len(moy)
     toreturn=0
     for i in range(nb_gaussian):
-        gaussian=stat.multivariate_normal.pdf(x,mean=moy[i],cov=cov[i])
+        gaussian=stats.multivariate_normal.pdf(x,mean=moy[i],cov=cov[i])
         toreturn+=gaussian
     return toreturn/nb_gaussian 
 
@@ -27,7 +28,7 @@ def marg1(x,moy=moy_list,cov=cov_list):
     nb_gaussian=len(moy)
     toreturn=0
     for i in range(nb_gaussian):
-        gaussian=stat.norm.pdf(x,loc=moy[i][0],scale=cov[i][0,0])
+        gaussian=stats.norm.pdf(x,loc=moy[i][0],scale=cov[i][0,0])
         toreturn+=gaussian
     return toreturn/nb_gaussian
 
@@ -35,7 +36,7 @@ def marg2(x,moy=moy_list,cov=cov_list):
     nb_gaussian=len(moy)
     toreturn=0
     for i in range(nb_gaussian):
-        gaussian=stat.norm.pdf(x,loc=moy[i][1],scale=cov[i][1,1])
+        gaussian=stats.norm.pdf(x,loc=moy[i][1],scale=cov[i][1,1])
         toreturn+=gaussian
     return toreturn/nb_gaussian
 
@@ -52,9 +53,9 @@ def proba2(y,x,moy=moy_list,cov=cov_list):
 #Computing the Gradient
 
 def df1(x,moy,cov,det):
-    return -1/det*(cov[0,0]*(x[0]-moy[0])-cov[0,1]*(x[1]-moy[1]))*stat.multivariate_normal.pdf(x,mean=moy,cov=cov)
+    return -1/det*(cov[0,0]*(x[0]-moy[0])-cov[0,1]*(x[1]-moy[1]))*stats.multivariate_normal.pdf(x,mean=moy,cov=cov)
 def df2(x,moy,cov,det):
-    return -1/det*(cov[0,0]*(x[1]-moy[1])-cov[0,1]*(x[0]-moy[0]))*stat.multivariate_normal.pdf(x,mean=moy,cov=cov)
+    return -1/det*(cov[0,0]*(x[1]-moy[1])-cov[0,1]*(x[0]-moy[0]))*stats.multivariate_normal.pdf(x,mean=moy,cov=cov)
 
 def delta_log_gauss(x,moy=moy_list,cov=cov_list):
     nb_gaussian=len(moy)

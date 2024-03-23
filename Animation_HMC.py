@@ -31,8 +31,8 @@ def update(frame,sample,Trajectories,particle,line,trail):
         trail.set_offsets(np.vstack([trail.get_offsets(), current_position]))
 
         # Draw the trajectory between the current and previous positions
-        if frame > 0 and sample[frame - 1, 2]:
-            trajectory = Trajectories[frame - 1]
+        if frame > 0:
+            trajectory = Trajectories[frame]
             line.set_xdata(trajectory[:, 0])
             line.set_ydata(trajectory[:, 1])
             line.set_color('blue')
@@ -43,7 +43,7 @@ def update(frame,sample,Trajectories,particle,line,trail):
 
         # Draw the trajectory between the current and previous positions
         if frame > 0:
-            trajectory = Trajectories[frame - 1]
+            trajectory = Trajectories[frame]
             line.set_xdata(trajectory[:, 0])
             line.set_ydata(trajectory[:, 1])
             line.set_color('red')

@@ -20,3 +20,4 @@ I'm actually working on doing the same thing as above for Gibbs Sampling and HMC
 ## Useful additional readings 
 
 *A Conceptual Introduction to Hamiltonian Monte Carlo*, Michael Betancourt (2018), [Arxiv](https://arxiv.org/pdf/1701.02434.pdf)
+* https://github.com/chi-feng/mcmc-demo
